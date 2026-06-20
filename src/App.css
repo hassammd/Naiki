@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  /* Brand / Green Palette */
+  --color-brand-sidebar: #032b24;
+  --color-brand-active: #105b47;
+  --color-brand-accent: #1cc373;
+  --color-brand-light: #eaf9f2;
+
+  /* App Layout Neutrals */
+  --color-app-bg: #f4f7f6;
+  --color-card-bg: #ffffff;
+  --color-text-heading: #111827;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+
+  /* Feature Accents */
+  --color-purple: #7c3aed;
+  --color-purple-light: #eef2ff;
+  --color-amber: #f59e0b;
+  --color-amber-light: #fef3c7;
+  --color-blue: #3b82f6;
+  --color-blue-light: #eff6ff;
+  --color-pink: #ec4899;
+  --color-pink-light: #fce7f3;
+
+  /* Card Gradient */
+  --gradient-mashallah: linear-gradient(135deg, #6366f1 0%, #a5b4fc 100%);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+}
+
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.radial-progress::after {
+  display: none;
+}
