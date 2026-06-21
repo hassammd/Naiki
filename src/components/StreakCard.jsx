@@ -4,7 +4,7 @@ import trophy from "../assets/trophy.png";
 const StreakCard = () => {
   return (
     <>
-      <div className="grid grid-cols-2  shadow-sm  rounded-xl">
+      <div className="bg-white border border-border grid grid-cols-2  shadow-sm  rounded-xl">
         <div className="bg-gradient-to-r from-purple to-purple-light p-7 rounded-l-xl">
           <img className="w-50" src={trophy} alt="" />
         </div>
