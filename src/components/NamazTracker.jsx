@@ -6,47 +6,49 @@ import maghrib from "../assets/maghrib.png";
 import isha from "../assets/isha.png";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { useMycontext } from "../context/AppContext";
 
 const NamazTracker = () => {
-  const [prayers, setPrayers] = useState([
-    {
-      id: 1,
-      name: "Fajar",
-      time: "04:15 AM",
-      icon: fajar,
-      completed: false,
-    },
-    {
-      id: 2,
-      name: "Zuhr",
-      time: "12:30 AM",
-      icon: zuhr,
-      completed: false,
-    },
-    {
-      id: 3,
-      name: "Asr",
-      time: "04:45 PM",
-      icon: Asr,
-      completed: false,
-    },
-    {
-      id: 4,
-      name: "Maghrib",
-      time: "07:15 PM",
-      icon: maghrib,
-      completed: false,
-    },
-    {
-      id: 5,
-      name: "Isha",
-      time: "08:45 PM",
-      icon: isha,
-      completed: false,
-    },
-  ]);
+  const { prayers, setPrayers } = useMycontext();
 
-  console.log(prayers);
+  //   const [prayers, setPrayers] = useState([
+  //     {
+  //       id: 1,
+  //       name: "Fajar",
+  //       time: "04:15 AM",
+  //       icon: fajar,
+  //       completed: false,
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "Zuhr",
+  //       time: "12:30 AM",
+  //       icon: zuhr,
+  //       completed: false,
+  //     },
+  //     {
+  //       id: 3,
+  //       name: "Asr",
+  //       time: "04:45 PM",
+  //       icon: Asr,
+  //       completed: false,
+  //     },
+  //     {
+  //       id: 4,
+  //       name: "Maghrib",
+  //       time: "07:15 PM",
+  //       icon: maghrib,
+  //       completed: false,
+  //     },
+  //     {
+  //       id: 5,
+  //       name: "Isha",
+  //       time: "08:45 PM",
+  //       icon: isha,
+  //       completed: false,
+  //     },
+  //   ]);
+
   //toggler
   const prayersToggler = (id) => {
     setPrayers((prev) =>
@@ -72,6 +74,7 @@ const NamazTracker = () => {
               <h3 className="text-2xl font-semibold text-slate-900">
                 Namaz Tracker
               </h3>
+
               <span className="text-slate-500 text-sm">
                 Track your 5 daily prayers
               </span>

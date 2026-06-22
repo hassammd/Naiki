@@ -46,7 +46,7 @@ const SideBar = () => {
 
   return (
     <>
-      <nav className=" bg-brand-sidebar text-white px-12 py-12 flex flex-col gap-4">
+      <nav className="w-[15%] bg-brand-sidebar text-white px-12 py-12 flex flex-col gap-4">
         <div>
           <img src={logo} alt="" />
         </div>

@@ -2,7 +2,25 @@ import { FaFire, FaStar } from "react-icons/fa";
 import { MdOutlineChecklist } from "react-icons/md";
 import { TbBuildingMosque } from "react-icons/tb";
 import { HiArrowTrendingUp } from "react-icons/hi2";
+import { useMycontext } from "../context/AppContext";
+import { useState } from "react";
 const StatsCards = () => {
+  const { prayersCount, goodDeedsCount, goodDeeds, progressCount } =
+    useMycontext();
+
+  //Score
+  //1 prayer = 20 points
+  //1 GoodDeed = 10 points
+  const score = prayersCount * 20 + goodDeedsCount * 10;
+  const status =
+    score === 0
+      ? "Start Today!"
+      : score <= 50
+        ? "Good"
+        : score <= 100
+          ? "Amazing!"
+          : "Outstanding";
+
   const stats = [
     {
       title: "Current Streak",
@@ -16,16 +34,16 @@ const StatsCards = () => {
     },
     {
       title: "Today's Score",
-      value: "120",
+      value: score,
       subValue: "Points",
-      message: "Amazing!",
+      message: status,
       icon: <FaStar />,
       iconBg: "bg-violet-500",
       textColor: "text-violet-500",
     },
     {
       title: "Good Deeds",
-      value: "6 / 10",
+      value: `${goodDeedsCount} / ${goodDeeds.length}`,
       message: "This is great!",
       icon: <MdOutlineChecklist />,
       iconBg: "bg-amber-500",
@@ -33,7 +51,7 @@ const StatsCards = () => {
     },
     {
       title: "Prayers",
-      value: "3 / 5",
+      value: `${prayersCount} / 5`,
       message: "Keep going!",
       icon: <TbBuildingMosque />,
       iconBg: "bg-blue-500",

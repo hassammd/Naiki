@@ -1,45 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import star from "../assets/star.png";
-import quran from "../assets/quran.png";
+
 import { FaCheck } from "react-icons/fa";
+import { useMycontext } from "../context/AppContext";
+
 const NaikAmal = () => {
-  const [goodDeeds, setGoodDeeds] = useState([
-    {
-      id: 1,
-      name: "Quran Tilawat",
-
-      icon: quran,
-      completed: false,
-    },
-    {
-      id: 2,
-      name: "Sadqa",
-
-      icon: quran,
-      completed: false,
-    },
-    {
-      id: 3,
-      name: "Zikr",
-
-      icon: quran,
-      completed: false,
-    },
-    {
-      id: 4,
-      name: "Quran Tilawat",
-
-      icon: quran,
-      completed: false,
-    },
-    {
-      id: 5,
-      name: "Quran Tilawat",
-
-      icon: quran,
-      completed: false,
-    },
-  ]);
+  const { goodDeeds, setGoodDeeds } = useMycontext();
 
   //toggler
   const toggleHandler = (id) => {
