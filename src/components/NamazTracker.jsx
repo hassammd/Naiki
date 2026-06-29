@@ -9,7 +9,7 @@ import { FaCheck } from "react-icons/fa";
 import { useMycontext } from "../context/AppContext";
 
 const NamazTracker = () => {
-  const { prayers, setPrayers } = useMycontext();
+  const { prayers, setPrayers, prayersToggler } = useMycontext();
 
   //   const [prayers, setPrayers] = useState([
   //     {
@@ -50,13 +50,13 @@ const NamazTracker = () => {
   //   ]);
 
   //toggler
-  const prayersToggler = (id) => {
-    setPrayers((prev) =>
-      prev.map((items) =>
-        items.id === id ? { ...items, completed: !items.completed } : items,
-      ),
-    );
-  };
+  // const prayersToggler = (id) => {
+  //   setPrayers((prev) =>
+  //     prev.map((items) =>
+  //       items.id === id ? { ...items, completed: !items.completed } : items,
+  //     ),
+  //   );
+  // };
 
   const prayersCount = prayers.filter((prayer) => prayer.completed).length;
   const progress = (prayersCount / prayers.length) * 100;
@@ -71,9 +71,7 @@ const NamazTracker = () => {
             <img src={iconLogo} alt="" />
 
             <div>
-              <h3 className="text-2xl font-semibold text-slate-900">
-                Namaz Tracker
-              </h3>
+              <h2 className=" ">Namaz Tracker</h2>
 
               <span className="text-slate-500 text-sm">
                 Track your 5 daily prayers

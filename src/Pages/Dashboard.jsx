@@ -11,26 +11,22 @@ import WeeklyProgress from "../components/WeeklyProgress";
 const Dashboard = () => {
   return (
     <>
-      <div className="flex min-h-screen ">
-        <SideBar />
-
-        <div className="p-10 gap-6 flex flex-col w-full">
-          <Header />
-          <div className="">
-            <StatsCards />
-          </div>
-          <div className="grid lg:grid-cols-2 gap-6 ">
-            <NamazTracker />
-            <NaikAmal />
-          </div>
-          <div>
-            <StreakCard />
-          </div>
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            <TodayProgress />
-            <WeeklyProgress />
-            <Reminder />
-          </div>
+      <div className="p-10 gap-6 flex flex-col">
+        <Header />
+        <div className="">
+          <StatsCards />
+        </div>
+        <div className="grid lg:grid-cols-2 gap-6 ">
+          <NamazTracker />
+          <NaikAmal />
+        </div>
+        <div>
+          <StreakCard />
+        </div>
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <TodayProgress />
+          <WeeklyProgress />
+          <Reminder />
         </div>
       </div>
     </>

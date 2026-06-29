@@ -19,8 +19,6 @@ const NaikAmal = () => {
   const goodDeedsCount = goodDeeds.filter((items) => items.completed).length;
   const progressCount = (goodDeedsCount / goodDeeds.length) * 100;
 
-  //   console.log("adf", goodDeeds);
-
   return (
     <>
       <div className=" shadow-sm  rounded-xl p-7">

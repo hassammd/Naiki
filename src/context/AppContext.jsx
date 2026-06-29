@@ -96,13 +96,21 @@ const MyContextProvider = ({ children }) => {
     return defaultGoodDeeds;
   });
 
+  //prayeers rogglers
+  const prayersToggler = (id) => {
+    setPrayers((prev) =>
+      prev.map((items) =>
+        items.id === id ? { ...items, completed: !items.completed } : items,
+      ),
+    );
+  };
+
   //save state for prayers
   useEffect(() => {
     localStorage.setItem("prayersData", JSON.stringify(prayers));
   }, [prayers]);
 
   //save state for good deeds
-
   useEffect(() => {
     localStorage.setItem("GoodDeedsData", JSON.stringify(goodDeeds));
   }, [goodDeeds]);
@@ -124,6 +132,7 @@ const MyContextProvider = ({ children }) => {
     setGoodDeeds,
     goodDeedsCount,
     progressCount,
+    prayersToggler,
   };
   return <myContext.Provider value={value}>{children}</myContext.Provider>;
 };

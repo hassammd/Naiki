@@ -19,7 +19,7 @@ const SignUp = ({ toggleForm }) => {
 
   const formHandler = async (e) => {
     e.preventDefault();
-
+    setError({});
     setLoading(true);
     let newError = {};
     if (fullName.trim() === "") {
@@ -42,7 +42,8 @@ const SignUp = ({ toggleForm }) => {
       newError = { ...newError, passwordNotMatchError: "Password Not Match" };
     }
     setError(newError);
-    if (newError) {
+    if (Object.keys(newError).length > 0) {
+      setError(newError);
       setLoading(false);
       return;
     }
@@ -56,6 +57,7 @@ const SignUp = ({ toggleForm }) => {
       navigate("/");
     } catch (err) {
       console.log(err.message);
+      setError(err.message);
       setLoading(false);
     }
   };
@@ -144,7 +146,8 @@ const SignUp = ({ toggleForm }) => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3 mt-2 bg-[#10b981] hover:bg-[#0d9488] text-white font-medium text-sm rounded-xl shadow-sm transition-all"
+            disabled={loading}
+            className="cursor-pointer disabled:bg-gray-400 w-full py-3 mt-2 bg-[#10b981] hover:bg-[#0d9488] text-white font-medium text-sm rounded-xl shadow-sm transition-all"
           >
             Get Started
           </button>
@@ -158,7 +161,7 @@ const SignUp = ({ toggleForm }) => {
               onClick={toggleForm}
               className="text-[#10b981] font-semibold hover:underline bg-transparent border-none p-0 cursor-pointer"
             >
-              Sign In
+              {loading ? "Creating Account..." : "Get Started"}
             </button>
           </p>
         </div>
